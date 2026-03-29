@@ -15,7 +15,7 @@ export default function WhyUs() {
         py-20 lg:py-28 
         px-4 md:px-10 lg:px-[132px] 
         scroll-mt-[78px]
-        bg-[url('..\public\pngtree-nice-green-forest-landscape-city-hd-background-wallpaper-desktop-image_16327548.jpg')]
+        bg-[url('\pngtree-nice-green-forest-landscape-city-hd-background-wallpaper-desktop-image_16327548.jpg')]
         bg-cover bg-center
         overflow-hidden
       "
