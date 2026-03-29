@@ -1,21 +1,20 @@
-import Header from "./components/Header";
-import Hero from "./sections/Hero";
-import About from "./sections/About";
-import WhyUs from "./sections/WhyUs";
-import Catalog from "./sections/Catalog";
-import Contact from "./sections/Contact";
-import Devider from "./components/Devider";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AdatkezelesiTajekoztato from "./pages/AdatkezelesiTajekoztato";
+import ASZF from "./pages/ASZF";
+import CookieTajekoztato from "./pages/CookieTajekoztato";
+import CookieBanner from "./components/CookieBanner";
 
 export default function App() {
   return (
-    <div className="flex flex-col min-h-screen relative">
-      <Header />
-      <Hero />
-      <About />
-      <WhyUs />
-      <Catalog />
-      <Devider />
-      <Contact />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/adatkezelesi-tajekoztato" element={<AdatkezelesiTajekoztato />} />
+        <Route path="/aszf" element={<ASZF />} />
+        <Route path="/cookie-tajekoztato" element={<CookieTajekoztato />} />
+      </Routes>
+      <CookieBanner />
+    </>
   );
 }

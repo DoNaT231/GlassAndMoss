@@ -5,12 +5,12 @@ export default function WhatWeDo() {
     <>
       <section
         id="mit-csinalunk"
-        className="w-full relative z-10 py-20 lg:py-[118px] px-4 md:px-10 lg:px-[132px] scroll-mt-[78px]"
+        className="w-full relative z-10 py-20 lg:py-28 px-4 md:px-10 lg:px-[132px] scroll-mt-[78px] bg-gradient-to-b from-[#0b0f0a] via-[#10150f] to-[#0b0f0a]"
         data-figma-id="40:2"
       >
         <div className="max-w-[1920px] mx-auto">
           <h2
-              className="font-bold text-[clamp(2.5rem,4.4vw,64px)] text-primary mb-8 lg:mb-12 lg:ml-[78px] text-center lg:text-left"
+              className="font-bold text-[clamp(2.5rem,4.4vw,64px)] text-white mb-8 lg:mb-12 text-left"
               data-figma-id="40:40"
             >
               Mit készítünk?
@@ -31,7 +31,7 @@ export default function WhatWeDo() {
                   className="w-full aspect-[806/402] flex items-start justify-start p-6"
                   data-figma-id={card.id}
                 >
-                  <h3 className="font-bold text-[clamp(1.5rem,2.5vw,32px)] text-primary text-center px-6">
+                  <h3 className="font-bold text-[clamp(1.5rem,2.5vw,32px)] text-white text-left px-6">
                     {card.title}
                   </h3>
                 </GlassCard>

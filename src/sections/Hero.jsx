@@ -1,95 +1,98 @@
 import GlassCard from "../components/GlassCard";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
     <section
       className="
-        flex-1 flex items-center justify-center 
-        lg:py-[160px]
-        w-full max-w-[1920px] mx-auto relative z-10 min-h-screen
-        overflow-hidden
-        bg-[url(../public/desktop-wallpapers-mossy-forest-wallpaper-for_9599288.jpg!w700wp)]
+        relative z-10 flex min-h-screen w-full max-w-[1920px] mx-auto items-center justify-center overflow-hidden
+        px-3 pt-24 pb-8 sm:px-5 sm:pt-28 sm:pb-10 md:px-8 md:pt-32 lg:px-10 lg:pt-36 lg:pb-16
+        bg-[url('/desktop-wallpapers-mossy-forest-wallpaper-for_9599288.jpg!w700wp')]
         bg-cover bg-center
       "
     >
-      {/* Dark overlay a jobb kontraszthoz */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+      {/* háttér sötétítés */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.58),rgba(0,0,0,0.42),rgba(0,0,0,0.62))]" />
+
+      {/* glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(132,160,56,0.18),transparent_55%)]" />
 
       <GlassCard
         rounded="large"
         className="
-          relative z-10 
-          flex flex-col items-center justify-center 
-          w-full max-w-[850px] 
-          min-h-[360px] 
-          px-6 py-10 md:px-10 md:py-12 
-          overflow-hidden group
-          bg-white/[0.05] 
-          border border-white/10
-          shadow-[0_20px_80px_rgba(0,0,0,0.45)]
-          backdrop-blur-xl
+          relative z-10 w-full max-w-[1120px]
+          px-4 py-7
+          sm:px-6 sm:py-9
+          md:px-10 md:py-12
+          lg:px-16 lg:py-16
         "
       >
-        {/* Glow háttér */}
-        <div
-          className="
-            absolute inset-0 
-            opacity-40 
-            blur-3xl 
-            bg-gradient-to-r 
-            from-[#3f5d2a] via-[#6b8f3c] to-[#3f5d2a]
-            group-hover:opacity-60 
-            transition duration-700
-          "
-        />
+        <div className="flex flex-col items-center text-center">
+          <img
+            src="https://static.wixstatic.com/media/3fde4b_4f78e0efd5524d329ba6e25ae3336bfd~mv2.png"
+            alt="Glass & Moss"
+            className="
+              mb-4 h-auto w-full
+              max-w-[220px]
+              sm:max-w-[300px]
+              md:max-w-[460px]
+              lg:max-w-[760px]
+              drop-shadow-[0_12px_36px_rgba(0,0,0,0.45)]
+            "
+          />
 
-        {/* Logo */}
-        <img
-          src="https://static.wixstatic.com/media/3fde4b_4f78e0efd5524d329ba6e25ae3336bfd~mv2.png"
-          className="
-            relative z-10 
-            w-full max-w-[650px] 
-            h-auto 
-            mb-6 
-            drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]
-          "
-        />
+          <p
+            className="
+              max-w-[700px]
+              text-[0.98rem] leading-snug
+              sm:text-[1.05rem]
+              md:text-lg
+              lg:text-[22px]
+              font-medium text-white/85
+            "
+          >
+            Természet üvegbe foglalva.
+          </p>
 
-        {/* Subtitle */}
-        <h2
-          className="
-            relative z-10 
-            text-primary text-center 
-            text-[clamp(1.1rem,1.6vw,20px)] 
-            tracking-wide 
-            mb-8
-            opacity-90
-          "
-        >
-          Természet üvegbe foglalva.
-        </h2>
+          <p
+            className="
+              mt-2 max-w-[620px]
+              px-1
+              text-[0.84rem] leading-relaxed
+              sm:mt-3 sm:text-[0.95rem]
+              md:text-base
+              text-white/68
+            "
+          >
+            Egyedi terráriumok, floráriumok és természetközeli kompozíciók,
+            kézzel készítve, letisztult megjelenéssel.
+          </p>
 
-        {/* CTA */}
-        <button
-          className="
-            relative z-10 
-            px-8 py-3 
-            rounded-full 
-            border border-[#8FAE3C] 
-            bg-[#4f6f2f]/50 
-            text-primary 
-            text-[clamp(0.9rem,1.2vw,18px)] 
-            backdrop-blur-md
-
-            shadow-[0_0_20px_rgba(143,174,60,0.3)]
-            hover:shadow-[0_0_40px_rgba(143,174,60,0.6)]
-            hover:bg-[#4f6f2f]
-
-            transition-all duration-300
-          "
-        >
-          Katalógus megtekintése
-        </button>
+          <div className="mt-6 w-full sm:mt-8">
+            <Link to="/#katalogus" className="block w-full sm:w-auto">
+              <button
+                className="
+                  w-full min-h-[52px]
+                  sm:w-auto
+                  rounded-full border border-[#9DB85A]/55
+                  bg-[#6f8f35]/25
+                  px-6 py-3.5
+                  sm:px-8 sm:py-4
+                  text-[0.95rem] sm:text-base
+                  font-medium text-white
+                  backdrop-blur-md
+                  transition-all duration-300
+                  hover:scale-[1.02]
+                  hover:border-[#B7D46E]
+                  hover:bg-[#7fa33c]/40
+                  active:scale-[0.98]
+                "
+              >
+                Katalógus megtekintése
+              </button>
+            </Link>
+          </div>
+        </div>
       </GlassCard>
     </section>
   );

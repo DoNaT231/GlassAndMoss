@@ -1,31 +1,31 @@
 const GALLERY_IMAGES = [
   {
-    src: "./public/ChatGPT Image Mar 21, 2026, 09_45_55 PM.png",
+    src: "/ChatGPT Image Mar 21, 2026, 09_45_55 PM.png",
     title: "Erdőfal installáció",
     category: "Dekor",
   },
   {
-    src: "./public/ChatGPT Image Mar 21, 2026, 09_48_46 PM.png",
+    src: "/ChatGPT Image Mar 21, 2026, 09_48_46 PM.png",
     title: "Lebegő kompozíció",
     category: "Asztali",
   },
   {
-    src: "./public/ChatGPT Image Mar 21, 2026, 09_48_53 PM.png",
+    src: "/ChatGPT Image Mar 21, 2026, 09_48_53 PM.png",
     title: "Mikroökoszisztéma",
     category: "Asztali",
   },
   {
-    src: "./public/ChatGPT Image Mar 21, 2026, 10_03_25 PM.png",
+    src: "/ChatGPT Image Mar 21, 2026, 10_03_25 PM.png",
     title: "Erdei kompozíció",
     category: "Asztali",
   },
   {
-    src: "./public/szivecskés.png",
+    src: "/szivecskés.png",
     title: "Üveg harmónia",
     category: "Ajándék",
   },
   {
-    src: "./public/ChatGPT Image Mar 21, 2026, 10_15_13 PM.png",
+    src: "/ChatGPT Image Mar 21, 2026, 10_15_13 PM.png",
     title: "Természet installáció",
     category: "Dekor",
   },
@@ -34,61 +34,61 @@ const GALLERY_IMAGES = [
 export default function Catalog() {
   return (
     <section
-      id="rolunk"
+      id="katalogus"
       className="
-        w-full relative z-10 
-        py-20 lg:py-28 
-        px-4 md:px-10 lg:px-24 
+        relative z-10 w-full overflow-hidden
         scroll-mt-[78px]
         bg-gradient-to-b from-[#0b0f0a] via-[#10150f] to-[#0b0f0a]
-        overflow-hidden
+        px-4 py-20 md:px-10 lg:px-[132px] lg:py-28
       "
     >
-      <div className="max-w-[1920px] mx-auto">
-        <h2 className="font-bold text-[clamp(2.5rem,4.4vw,64px)] text-white mb-8 lg:mb-12 lg:ml-[78px] text-left lg:text-left">
+      <div className="mx-auto max-w-[1920px]">
+        <h2 className="mb-8 text-left text-[clamp(2.5rem,4.4vw,64px)] font-bold text-white lg:mb-12">
           Katalógus
         </h2>
 
-        <div className="max-w-[1666px] mx-auto">
-          <p className="text-white/90 text-[clamp(1rem,1.2vw,18px)] text-left mb-12 max-w-2xl">
-            Válogatás a kész és megrendelhető munkáinkból, természetes formákra és egyedi kompozíciókra építve.
+        <div className="mx-auto max-w-[1666px]">
+          <p className="mb-12 max-w-2xl text-left text-[clamp(1rem,1.2vw,18px)] leading-[1.8] text-white/90">
+            Válogatás a kész és megrendelhető munkáinkból, természetes formákra
+            és egyedi kompozíciókra építve.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:gap-6">
             {GALLERY_IMAGES.map((item, index) => (
-              <div
+              <article
                 key={index}
                 className="
-                  rounded-[28px] overflow-hidden 
-                  border border-white/10 
-                  bg-black/20 backdrop-blur-sm
-                  shadow-[0_14px_40px_rgba(0,0,0,0.28)]
-                  group cursor-pointer
+                  group overflow-hidden rounded-[24px]
+                  border border-white/10 bg-white/[0.04]
+                  shadow-[0_8px_30px_rgba(0,0,0,0.18)]
+                  backdrop-blur-xl
                   transition-all duration-300
-                  hover:-translate-y-1.5
-                  hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]
-                  hover:border-[#7F7F01]/30
+                  hover:-translate-y-1
+                  hover:border-[#A3B86C]/25
+                  hover:bg-white/[0.05]
+                  hover:shadow-[0_14px_40px_rgba(0,0,0,0.24)]
                 "
               >
-                <div className="relative aspect-[4/5] overflow-hidden bg-black/20">
+                <div className="relative aspect-[4/4.6] overflow-hidden bg-black/20">
                   <img
                     src={item.src}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                  <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                    <span className="text-[11px] md:text-xs font-semibold text-[#A3B86C] uppercase tracking-[0.18em]">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#A3B86C] md:text-[11px]">
                       {item.category}
                     </span>
-                    <h3 className="text-white font-semibold text-[1.15rem] md:text-[1.35rem] leading-tight mt-2">
+
+                    <h3 className="mt-2 text-[1rem] font-semibold leading-tight text-white md:text-[1.15rem]">
                       {item.title}
                     </h3>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

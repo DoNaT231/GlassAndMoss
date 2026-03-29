@@ -12,7 +12,7 @@ export default function WhyUs() {
       id="miert-mi"
       className="
         w-full relative z-10 
-        py-24 lg:py-[140px] 
+        py-20 lg:py-28 
         px-4 md:px-10 lg:px-[132px] 
         scroll-mt-[78px]
         bg-[url('..\public\pngtree-nice-green-forest-landscape-city-hd-background-wallpaper-desktop-image_16327548.jpg')]
@@ -33,22 +33,12 @@ export default function WhyUs() {
         blur-[160px]
       " />
 
-      <div className="max-w-[1920px] mx-auto relative z-10">
-        <h2 className="
-          font-bold 
-          text-[clamp(2.3rem,4vw,56px)] 
-          text-white 
-          mb-14 
-          text-center
-        ">
+      <div className="max-w-[1666px] mx-auto relative z-10">
+        <h2 className="font-bold text-[clamp(2.5rem,4.4vw,64px)] text-white mb-8 lg:mb-12 text-left">
           Miért minket válassz?
         </h2>
 
-        <div className="
-          grid grid-cols-1 md:grid-cols-3 
-          gap-6 md:gap-8 
-          max-w-[1200px] mx-auto
-        ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {points.map((text, index) => (
             <GlassCard
               key={index}
@@ -64,12 +54,7 @@ export default function WhyUs() {
                 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)]
               "
             >
-              <p className="
-                font-semibold 
-                text-[clamp(1rem,1.2vw,17px)] 
-                text-white 
-                leading-relaxed
-              ">
+              <p className="font-medium text-[clamp(1rem,1.2vw,18px)] text-white leading-[1.8]">
                 {text}
               </p>
             </GlassCard>
