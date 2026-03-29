@@ -1,6 +1,6 @@
 export default function Divider() {
     return (
-      <div className="relative h-64 md:h-88">
+      <div className="relative h-64 md:h-100">
         
         <div
           className="h-full w-full bg-cover bg-center"
