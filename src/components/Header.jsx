@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,6 +29,7 @@ export default function Header() {
   const navLinks = [
     { name: "Rólunk", slug: "rolunk", id: "13:6" },
     { name: "Miért mi?", slug: "miert-mi", id: "13:7" },
+    { name: "Gondozás", path: "/gondozas", id: "care" },
     { name: "Katalógus", slug: "katalogus", id: "13:8" },
     { name: "Elérhetőség", slug: "elerhetoseg", id: "13:9" },
     { name: "Impresszum", slug: "impresszum", id: "13:13" },
@@ -63,16 +64,27 @@ export default function Header() {
               className="hidden lg:flex items-center gap-10 xl:gap-14"
               data-figma-id="13:5"
             >
-              {navLinks.map((link) => (
-                <a
-                  key={link.slug}
-                  href={`/#${link.slug}`}
-                  className="relative font-semibold text-[clamp(0.95rem,1.1vw,1.1rem)] text-primary/90 hover:text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
-                  data-figma-id={link.id}
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.path ? (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className="relative font-semibold text-[clamp(0.95rem,1.1vw,1.1rem)] text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
+                    data-figma-id={link.id}
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.slug}
+                    href={`/#${link.slug}`}
+                    className="relative font-semibold text-[clamp(0.95rem,1.1vw,1.1rem)] text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
+                    data-figma-id={link.id}
+                  >
+                    {link.name}
+                  </a>
+                ),
+              )}
             </nav>
 
             {/* MOBILE BUTTON */}
@@ -142,33 +154,61 @@ export default function Header() {
               </div>
 
               <div className="px-4 pb-4 space-y-3">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.slug}
-                    href={`/#${link.slug}`}
-                    onClick={() => setMobileOpen(false)}
-                    className="relative font-semibold text-[clamp(0.95rem,1.1vw,1.1rem)] text-white/82 hover:text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"                  >
-                    <span className="text-[1rem] font-medium tracking-[0.01em]">
-                      {link.name}
-                    </span>
-
-                    <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#A3B86C]/10 text-[#A3B86C] group-hover:bg-[#A3B86C]/20 transition-colors duration-300">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </span>
-                  </a>
-                ))}
+                {navLinks.map((link) =>
+                  link.path ? (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setMobileOpen(false)}
+                      className="relative flex items-center justify-between gap-3 font-semibold text-[clamp(0.95rem,1.1vw,1.1rem)] text-white/82 hover:text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
+                    >
+                      <span className="text-[1rem] font-medium tracking-[0.01em]">
+                        {link.name}
+                      </span>
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#A3B86C]/10 text-[#A3B86C] transition-colors duration-300">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </span>
+                    </Link>
+                  ) : (
+                    <a
+                      key={link.slug}
+                      href={`/#${link.slug}`}
+                      onClick={() => setMobileOpen(false)}
+                      className="relative flex items-center justify-between gap-3 font-semibold text-[clamp(0.95rem,1.1vw,1.1rem)] text-white/82 hover:text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
+                    >
+                      <span className="text-[1rem] font-medium tracking-[0.01em]">
+                        {link.name}
+                      </span>
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#A3B86C]/10 text-[#A3B86C] transition-colors duration-300">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </span>
+                    </a>
+                  ),
+                )}
               </div>
 
               <div className="px-4 pb-4">

@@ -47,6 +47,12 @@ export default function Footer() {
           <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm">
               <Link
+                to="/gondozas"
+                className="text-white/60 hover:text-[#A3B86C] transition-colors"
+              >
+                Gondozás
+              </Link>
+              <Link
                 to="/adatkezelesi-tajekoztato"
                 className="text-white/60 hover:text-[#A3B86C] transition-colors"
               >

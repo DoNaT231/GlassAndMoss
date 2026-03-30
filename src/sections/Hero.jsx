@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       className="
-        relative z-10 flex min-h-screen w-full max-w-[1920px] mx-auto items-center justify-center overflow-hidden
+        relative z-10 flex min-h-screen w-full mx-auto items-center justify-center overflow-hidden
         px-3 pt-24 pb-8 sm:px-5 sm:pt-28 sm:pb-10 md:px-8 md:pt-32 lg:px-10 lg:pt-36 lg:pb-16
         bg-[url('/desktop-wallpapers-mossy-forest-wallpaper-for_9599288.jpg!w700wp')]
         bg-cover bg-center

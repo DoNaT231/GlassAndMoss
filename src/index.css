@@ -4,3 +4,22 @@
   --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
+
+:root {
+  /* Core backgrounds */
+  --color-bg-900: #0b0f0a;
+  --color-bg-850: #10150f;
+  --color-surface-900: #1a1f18;
+
+  /* Brand accents */
+  --color-accent-500: #8fae3c;
+  --color-accent-600: #7f7f01;
+  --color-accent-300: #a3b86c;
+  --color-accent-200: #c7dd8a;
+  --color-accent-700: #5d7c34;
+
+  /* Text */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.9);
+  --color-text-muted: rgba(255, 255, 255, 0.7);
+}
