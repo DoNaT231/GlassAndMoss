@@ -3,14 +3,10 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer
-      id="impresszum"
       className="w-full relative z-10 py-12 md:py-16 px-4 md:px-10 lg:px-[132px] scroll-mt-[78px] border-t border-white/10 bg-[#0b0f0a]"
     >
       <div className="max-w-[1920px] mx-auto">
         <div className="max-w-[1666px] mx-auto">
-          <h3 className="font-bold text-[clamp(1.25rem,2vw,22px)] text-white mb-6 text-left">
-            Impresszum
-          </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-white/80 text-[clamp(0.9rem,1.1vw,16px)]">
             <div className="space-y-3">

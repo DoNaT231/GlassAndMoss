@@ -32,7 +32,6 @@ export default function Header() {
     { name: "Gondozás", path: "/gondozas", id: "care" },
     { name: "Katalógus", slug: "katalogus", id: "13:8" },
     { name: "Elérhetőség", slug: "elerhetoseg", id: "13:9" },
-    { name: "Impresszum", slug: "impresszum", id: "13:13" },
   ];
 
   return (
@@ -40,8 +39,8 @@ export default function Header() {
       className="fixed top-0 left-0 right-0 z-50 w-full"
       data-figma-id="13:3"
     >
-      <div className="max-w-[1920px] mx-auto px-4 md:px-8 lg:px-[80px]">
-        <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.18)] overflow-hidden">
+      <div className="max-w-[1920px] mx-auto">
+        <div className="mt-4 border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.18)] overflow-hidden">
           
           {/* TOP BAR */}
           <div className="flex items-center justify-between min-h-[60px] px-4 md:px-6 lg:px-8">

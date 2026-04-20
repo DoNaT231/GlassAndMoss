@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import GlassCard from "../components/GlassCard";
+import PrimaryCtaButton from "../components/PrimaryCtaButton";
 
 export default function CareTeaser() {
   return (
@@ -36,19 +37,9 @@ export default function CareTeaser() {
 
           <div className="shrink-0 sm:pl-4">
             <Link to="/gondozas" className="block w-full sm:w-auto">
-              <span
-                className="
-                  inline-flex min-h-[48px] w-full items-center justify-center
-                  rounded-full border border-[#A3B86C]/45 bg-[#8FAE3C]/15
-                  px-6 py-3 text-sm font-semibold text-white
-                  backdrop-blur-sm transition-all duration-300
-                  hover:border-[#B7D46E] hover:bg-[#8FAE3C]/25
-                  active:scale-[0.98]
-                  sm:min-h-[52px] sm:px-8 sm:text-base
-                "
-              >
+              <PrimaryCtaButton className="w-full px-6 py-3 text-sm font-semibold sm:min-h-[52px] sm:px-8 sm:text-base">
                 Gondozási útmutató
-              </span>
+              </PrimaryCtaButton>
             </Link>
           </div>
         </GlassCard>

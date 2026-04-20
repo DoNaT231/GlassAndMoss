@@ -7,25 +7,22 @@ export default function GlassCard({
   ...props
 }) {
   const roundedClass =
-    rounded === "large" ? "rounded-2xl" : "rounded-xl";
+    rounded === "large" ? "rounded-[32px]" : "rounded-2xl";
 
   const classes = [
-    "relative overflow-hidden",
+    "relative isolate overflow-hidden",
     roundedClass,
 
-    // HEADER STYLE GLASS
-    "bg-white/[0.04]",
-    "backdrop-blur-xl",
+    // cleaner glass base
+    "bg-[linear-gradient(135deg,rgba(161, 161, 161, 0.1),rgba(255,255,255,0.06))]",
+    "backdrop-blur-[8px] supports-[backdrop-filter]:backdrop-blur-[4px]",
 
-    // CLEAN BORDER
-    "border border-white/10",
+    // premium border
+    "border border-white/15",
+    "shadow-[0_20px_60px_rgba(0,0,0,0.35)]",
 
-    // SOFT SHADOW (mint header)
-    "shadow-[0_8px_30px_rgba(0,0,0,0.18)]",
-
-    // HOVER (finom)
     hover &&
-      "transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20",
+      "transition-all duration-300 hover:border-white/25 hover:bg-white/[0.10]",
 
     className,
   ]
@@ -34,8 +31,17 @@ export default function GlassCard({
 
   return (
     <Component className={classes} {...props}>
-      {/* nagyon finom belső highlight */}
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.06),transparent_40%)]" />
+      {/* top soft highlight */}
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.04)_22%,transparent_48%)]" />
+
+      {/* subtle green tint */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(158,196,76,0.12),transparent_55%)]" />
+
+      {/* inner border */}
+      <div className="pointer-events-none absolute inset-[1px] rounded-[inherit] border border-white/10" />
+
+      {/* edge glow */}
+      <div className="pointer-events-none absolute -inset-px rounded-[inherit] shadow-[inset_0_1px_0_rgba(255,255,255,0.22),inset_0_-1px_0_rgba(255,255,255,0.05)]" />
 
       <div className="relative z-10">{children}</div>
     </Component>
