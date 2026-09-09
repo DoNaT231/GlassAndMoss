@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "../components/Header";
 import Hero from "../sections/Hero";
 import About from "../sections/About";
@@ -10,10 +11,12 @@ import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 
 export default function HomePage() {
+  const [headerReveal, setHeaderReveal] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen relative">
-      <Header />
-      <Hero />
+      <Header reveal={headerReveal} />
+      <Hero onIntroComplete={() => setHeaderReveal(true)} />
       <About />
       <WhyUs />
       <CareTeaser />

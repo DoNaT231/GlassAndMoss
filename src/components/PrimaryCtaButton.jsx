@@ -1,12 +1,12 @@
 export default function PrimaryCtaButton({ children, className = "" }) {
   const classes = [
-    "group relative inline-flex min-h-[54px] items-center justify-center overflow-hidden",
-    "rounded-full border border-[#8fae3c]/22",
+    "group relative inline-flex min-h-[40px] items-center justify-center overflow-hidden sm:min-h-[54px]",
+    "rounded-full border border-[#8BAE5A]",
+    "shadow-[0_0_20px_rgba(139,174,90,0.25)]",
     "bg-[linear-gradient(180deg,rgba(62,82,30,0.58),rgba(35,50,21,0.66))]",
-    "px-7 py-3.5 sm:px-8 sm:py-4",
-    "text-[0.96rem] sm:text-base",
+    "px-5 py-2 sm:px-8 sm:py-4",
+    "text-[0.78rem] sm:text-base",
     "font-medium text-white/92",
-    "shadow-[0_10px_30px_rgba(0,0,0,0.34)]",
     "backdrop-blur-md",
     "transition-all duration-300",
     "hover:-translate-y-0.5",

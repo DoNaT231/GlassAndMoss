@@ -3,7 +3,9 @@ export default function GlassCard({
   className = "",
   rounded = "default",
   hover = false,
+  shadow = true,
   as: Component = "div",
+  ref,
   ...props
 }) {
   const roundedClass =
@@ -15,11 +17,11 @@ export default function GlassCard({
 
     // cleaner glass base
     "bg-[linear-gradient(135deg,rgba(161, 161, 161, 0.1),rgba(255,255,255,0.06))]",
-    "backdrop-blur-[8px] supports-[backdrop-filter]:backdrop-blur-[4px]",
+    "backdrop-blur-[4px] supports-[backdrop-filter]:backdrop-blur-[2px]",
 
     // premium border
     "border border-white/15",
-    "shadow-[0_20px_60px_rgba(0,0,0,0.35)]",
+    shadow && "shadow-[0_20px_60px_rgba(0,0,0,0.35)]",
 
     hover &&
       "transition-all duration-300 hover:border-white/25 hover:bg-white/[0.10]",
@@ -30,7 +32,7 @@ export default function GlassCard({
     .join(" ");
 
   return (
-    <Component className={classes} {...props}>
+    <Component ref={ref} className={classes} {...props}>
       {/* top soft highlight */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.04)_22%,transparent_48%)]" />
 
@@ -43,7 +45,7 @@ export default function GlassCard({
       {/* edge glow */}
       <div className="pointer-events-none absolute -inset-px rounded-[inherit] shadow-[inset_0_1px_0_rgba(255,255,255,0.22),inset_0_-1px_0_rgba(255,255,255,0.05)]" />
 
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10 h-full">{children}</div>
     </Component>
   );
 }

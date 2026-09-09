@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-export default function Header() {
+const LABEL_FADE_MS = 700;
+const HEADER_SLIDE_MS = 950;
+
+export default function Header({ reveal = true }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showLabels, setShowLabels] = useState(reveal);
   const location = useLocation();
 
   useEffect(() => {
@@ -26,6 +30,24 @@ export default function Header() {
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    if (!reveal) {
+      setShowLabels(false);
+      return;
+    }
+
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setShowLabels(true);
+      return;
+    }
+
+    const timer = window.setTimeout(() => setShowLabels(true), 400);
+    return () => window.clearTimeout(timer);
+  }, [reveal]);
+
   const navLinks = [
     { name: "Rólunk", slug: "rolunk", id: "13:6" },
     { name: "Miért mi?", slug: "miert-mi", id: "13:7" },
@@ -34,9 +56,29 @@ export default function Header() {
     { name: "Elérhetőség", slug: "elerhetoseg", id: "13:9" },
   ];
 
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const fadeStyle = {
+    opacity: showLabels ? 1 : 0,
+    transform: showLabels ? "translateY(0px)" : "translateY(8px)",
+    transition: prefersReducedMotion
+      ? "none"
+      : `opacity ${LABEL_FADE_MS}ms ease-out, transform ${LABEL_FADE_MS}ms ease-out`,
+  };
+
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 w-full"
+      className={`
+        fixed top-0 left-0 right-0 z-50 w-full
+        transition-transform ease-out
+        ${reveal ? "translate-y-0" : "pointer-events-none -translate-y-full"}
+      `}
+      style={{
+        transitionDuration: prefersReducedMotion ? "0ms" : `${HEADER_SLIDE_MS}ms`,
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+      }}
       data-figma-id="13:3"
     >
       <div className="max-w-[1920px] mx-auto">
@@ -46,21 +88,22 @@ export default function Header() {
           <div className="flex items-center justify-between min-h-[60px] px-4 md:px-6 lg:px-8">
             <a
               href="/"
-              className="flex items-center shrink-0 transition-transform duration-300 hover:scale-[1.02]"
+              className="flex shrink-0 items-center transition-transform duration-300 hover:scale-[1.02]"
               aria-label="Glass & Moss főoldal"
             >
               <div
-                className="w-[90px] h-[36px] md:w-[150px] md:h-[46px] lg:w-[220px] lg:h-[56px] bg-contain bg-no-repeat bg-left"
+                className="h-[36px] w-[90px] bg-contain bg-left bg-no-repeat md:h-[46px] md:w-[150px] lg:h-[56px] lg:w-[220px]"
                 style={{
+                  ...fadeStyle,
                   backgroundImage:
-                    "url('https://static.wixstatic.com/media/3fde4b_cc57b6fab8454cb5a3e95a8515eed26a~mv2.png?originWidth=711&originHeight=142')",
+                    "url('public/icon.png')",
                 }}
                 data-figma-id="12:28"
               />
             </a>
 
             <nav
-              className="hidden lg:flex items-center gap-10 xl:gap-14"
+              className="hidden items-center gap-10 lg:flex xl:gap-14"
               data-figma-id="13:5"
             >
               {navLinks.map((link) =>
@@ -68,32 +111,36 @@ export default function Header() {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className="relative font-semibold text-[clamp(0.95rem,1.1vw,1.1rem)] text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
+                    className="relative font-light tracking-[0.06em] text-[0.88rem] text-white/80 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:text-white hover:after:w-full xl:text-[0.95rem]"
                     data-figma-id={link.id}
                   >
-                    {link.name}
+                    <span className="inline-block" style={fadeStyle}>
+                      {link.name}
+                    </span>
                   </Link>
                 ) : (
                   <a
                     key={link.slug}
                     href={`/#${link.slug}`}
-                    className="relative font-semibold text-[clamp(0.95rem,1.1vw,1.1rem)] text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
+                    className="relative font-light tracking-[0.06em] text-[0.88rem] text-white/80 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:text-white hover:after:w-full xl:text-[0.95rem]"
                     data-figma-id={link.id}
                   >
-                    {link.name}
+                    <span className="inline-block" style={fadeStyle}>
+                      {link.name}
+                    </span>
                   </a>
                 ),
               )}
             </nav>
 
             {/* MOBILE BUTTON */}
-            <div className="lg:hidden">
+            <div className="lg:hidden" style={fadeStyle}>
               <button
                 type="button"
                 aria-expanded={mobileOpen}
                 aria-label="Menü megnyitása"
                 onClick={() => setMobileOpen((o) => !o)}
-                className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 border border-white/10 text-primary hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300 active:scale-95 relative"
+                className="flex items-center justify-center w-10 h-10 rounded-2xl bg-white/5 border border-white/10 text-primary hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300 active:scale-95 relative"
               >
                 <svg
                   width="24"
@@ -147,7 +194,7 @@ export default function Header() {
                 <p className="text-[11px] tracking-[0.24em] uppercase text-white/40">
                   Menü
                 </p>
-                <p className="text-white text-base font-semibold">
+                <p className="text-white text-base font-light tracking-[0.04em]">
                   Glass & Moss
                 </p>
               </div>
@@ -159,9 +206,9 @@ export default function Header() {
                       key={link.path}
                       to={link.path}
                       onClick={() => setMobileOpen(false)}
-                      className="relative flex items-center justify-between gap-3 font-semibold text-[clamp(0.95rem,1.1vw,1.1rem)] text-white/82 hover:text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
+                      className="relative flex items-center justify-between gap-3 font-light tracking-[0.06em] text-[0.95rem] text-white/80 hover:text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
                     >
-                      <span className="text-[1rem] font-medium tracking-[0.01em]">
+                      <span className="text-[0.95rem] font-light tracking-[0.06em]">
                         {link.name}
                       </span>
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#A3B86C]/10 text-[#A3B86C] transition-colors duration-300">
@@ -185,9 +232,9 @@ export default function Header() {
                       key={link.slug}
                       href={`/#${link.slug}`}
                       onClick={() => setMobileOpen(false)}
-                      className="relative flex items-center justify-between gap-3 font-semibold text-[clamp(0.95rem,1.1vw,1.1rem)] text-white/82 hover:text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
+                      className="relative flex items-center justify-between gap-3 font-light tracking-[0.06em] text-[0.95rem] text-white/80 hover:text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
                     >
-                      <span className="text-[1rem] font-medium tracking-[0.01em]">
+                      <span className="text-[0.95rem] font-light tracking-[0.06em]">
                         {link.name}
                       </span>
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#A3B86C]/10 text-[#A3B86C] transition-colors duration-300">
@@ -213,7 +260,7 @@ export default function Header() {
               <div className="px-4 pb-4">
                 <div className="rounded-2xl border border-[#A3B86C]/20 bg-[#A3B86C]/8 px-5 py-4">
                   <p className="text-sm text-white/55 mb-1">Kapcsolat</p>
-                  <p className="text-white font-semibold">
+                  <p className="text-white font-light tracking-[0.03em]">
                     Egyedi terráriumok és floráriumok
                   </p>
                   <p className="text-sm text-white/65 mt-1">
