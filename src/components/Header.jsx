@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import headerIcon from "../assets/header-icon.png";
 
 const LABEL_FADE_MS = 700;
 const HEADER_SLIDE_MS = 950;
@@ -92,7 +93,7 @@ export default function Header({ reveal = true }) {
               aria-label="Glass & Moss főoldal"
             >
               <img
-                src="/icon.png"
+                src={headerIcon}
                 alt="Glass & Moss"
                 className="h-9 w-9 object-contain mix-blend-screen md:h-11 md:w-11 lg:h-14 lg:w-14"
                 style={fadeStyle}
