@@ -8,21 +8,21 @@ export default function AdatkezelesiTajekoztato() {
       <div className="max-w-[800px] mx-auto px-4 md:px-10 pt-24 pb-16 md:pt-32 md:pb-24">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-[#A3B86C] hover:text-white transition-colors mb-10"
+          className="type-small mb-10 inline-flex items-center gap-2 text-[#A3B86C] hover:text-white transition-colors"
         >
           ← Vissza a főoldalra
         </Link>
 
-        <h1 className="text-[clamp(2rem,4vw,40px)] font-bold mb-2">
+        <h1 className="type-display mb-2">
           Adatkezelési tájékoztató
         </h1>
-        <p className="text-white/60 text-sm mb-12">
+        <p className="type-small mb-12">
           Utolsó frissítés: {new Date().toLocaleDateString("hu-HU")}
         </p>
 
-        <div className="prose prose-invert prose-green max-w-none space-y-8 text-white/85 leading-relaxed">
+        <div className="type-body max-w-none space-y-8">
           <section>
-            <h2 className="text-xl font-semibold text-white mb-4">1. Az adatkezelő</h2>
+            <h2 className="type-heading mb-4">1. Az adatkezelő</h2>
             <p>
               Az adatkezelő: <strong>Komoróczy Donát EV</strong> (Glass & Moss)
             </p>
@@ -37,7 +37,7 @@ export default function AdatkezelesiTajekoztato() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white mb-4">
+            <h2 className="type-heading mb-4">
               2. Kezelt személyes adatok és céljaik
             </h2>
             <p>
@@ -54,7 +54,7 @@ export default function AdatkezelesiTajekoztato() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white mb-4">
+            <h2 className="type-heading mb-4">
               3. Az adatok megőrzési ideje
             </h2>
             <p>
@@ -63,7 +63,7 @@ export default function AdatkezelesiTajekoztato() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white mb-4">
+            <h2 className="type-heading mb-4">
               4. Az érintett jogai
             </h2>
             <p>Az érintett a következő jogokat gyakorolhatja:</p>
@@ -84,7 +84,7 @@ export default function AdatkezelesiTajekoztato() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white mb-4">
+            <h2 className="type-heading mb-4">
               5. Adatbiztonság
             </h2>
             <p>
@@ -93,7 +93,7 @@ export default function AdatkezelesiTajekoztato() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white mb-4">
+            <h2 className="type-heading mb-4">
               6. Cookie-k (sütik)
             </h2>
             <p>
@@ -106,7 +106,7 @@ export default function AdatkezelesiTajekoztato() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white mb-4">
+            <h2 className="type-heading mb-4">
               7. Kapcsolat
             </h2>
             <p>
