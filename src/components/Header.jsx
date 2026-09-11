@@ -95,7 +95,7 @@ export default function Header({ reveal = true }) {
               <img
                 src={headerIcon}
                 alt="Glass & Moss"
-                className="h-9 w-9 object-contain mix-blend-screen md:h-11 md:w-11 lg:h-14 lg:w-14"
+                className="h-10 w-10 object-contain mix-blend-screen md:h-12 md:w-12 lg:h-14 lg:w-14"
                 style={fadeStyle}
                 data-figma-id="12:28"
               />
