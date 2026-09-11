@@ -123,9 +123,13 @@ export default function Hero({ onIntroComplete }) {
       setTarget(measureHeroCardTarget(section, card));
     };
 
+    const raf = window.requestAnimationFrame(onResize);
     window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [phase]);
+    return () => {
+      window.cancelAnimationFrame(raf);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [phase, showContent]);
 
   const wrapStyle = getHeroWrapStyle(phase, from, target, showShadow);
 
@@ -174,7 +178,7 @@ export default function Hero({ onIntroComplete }) {
             style={{ transitionDuration: `${CONTENT_FADE_MS}ms` }}
           >
             <img
-              src="\10e113b2-7ce5-4f5b-84ee-4046c6b814b9.png"
+              src="/10e113b2-7ce5-4f5b-84ee-4046c6b814b9.png"
               alt="Glass & Moss"
               className="
                 -mb-1 h-auto w-full
@@ -300,15 +304,21 @@ function measureHeroCardTarget(section, card) {
   clone.style.height = "auto";
   clone.style.maxWidth = "none";
   clone.style.borderRadius = `${FINAL_RADIUS}px`;
-  clone.style.overflow = "hidden";
+  clone.style.overflow = "visible";
   clone.style.boxShadow = "none";
   clone.style.zIndex = "-1";
+  clone.querySelectorAll("*").forEach((el) => {
+    el.style.height = "auto";
+    el.style.minHeight = "0";
+    el.style.maxHeight = "none";
+    el.style.overflow = "visible";
+  });
   section.appendChild(clone);
-  const measured = clone.getBoundingClientRect().height;
+  const measured = Math.ceil(clone.getBoundingClientRect().height);
   clone.remove();
 
   const isMobile = window.innerWidth < 640;
-  const extraHeight = isMobile ? 72 : 0;
+  const extraHeight = isMobile ? 72 : 36;
   const height = Math.min(measured + extraHeight, contentH);
 
   return {

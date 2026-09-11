@@ -91,13 +91,11 @@ export default function Header({ reveal = true }) {
               className="flex shrink-0 items-center transition-transform duration-300 hover:scale-[1.02]"
               aria-label="Glass & Moss főoldal"
             >
-              <div
-                className="h-[36px] w-[90px] bg-contain bg-left bg-no-repeat md:h-[46px] md:w-[150px] lg:h-[56px] lg:w-[220px]"
-                style={{
-                  ...fadeStyle,
-                  backgroundImage:
-                    "url('public/icon.png')",
-                }}
+              <img
+                src="/icon.png"
+                alt="Glass & Moss"
+                className="h-9 w-9 object-contain mix-blend-screen md:h-11 md:w-11 lg:h-14 lg:w-14"
+                style={fadeStyle}
                 data-figma-id="12:28"
               />
             </a>
