@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import GlassCard from "../components/GlassCard";
 import PrimaryCtaButton from "../components/PrimaryCtaButton";
+import Reveal from "../components/Reveal";
+import useSectionReveal from "../hooks/useSectionReveal";
 
 export default function CareTeaser() {
+  const [sectionRef, visible] = useSectionReveal({ threshold: 0.35 });
+
   return (
     <section
       id="gondozas-bevezeto"
+      ref={sectionRef}
       className="
         relative z-10 w-full overflow-hidden
         scroll-mt-[78px]
@@ -15,34 +20,42 @@ export default function CareTeaser() {
       "
     >
       <div className="mx-auto max-w-[1666px]">
-        <GlassCard
-          className="
-            flex flex-col gap-6 p-6
-            sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:p-8
-            lg:p-10
-            border border-white/10 bg-white/[0.04] backdrop-blur-xl
-          "
-        >
-          <div className="min-w-0 text-left">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#A3B86C]">
-              Útmutató
-            </p>
-            <h2 className="mt-2 text-[clamp(1.35rem,3vw,2rem)] font-semibold tracking-tight text-white">
-              Hogyan gondozd a terráriumod?
-            </h2>
-            <p className="mt-3 max-w-2xl text-[clamp(0.95rem,1.1vw,1.05rem)] leading-[1.75] text-white/75">
-              Rövid, egyértelmű szabályok: locsolás, fény, szellőztetés — kezdőknek is.
-            </p>
-          </div>
+        <Reveal show={visible} delay={0} duration={1000} from="up">
+          <GlassCard
+            className="
+              flex flex-col gap-6 p-6
+              sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:p-8
+              lg:p-10
+              border border-white/10 bg-white/[0.04] backdrop-blur-xl
+            "
+          >
+            <div className="min-w-0 text-left">
+              <Reveal show={visible} delay={220} from="left">
+                <p className="type-label">
+                  Útmutató
+                </p>
+              </Reveal>
+              <Reveal show={visible} delay={340} from="left">
+                <h2 className="type-heading mt-2">
+                  Hogyan gondozd a terráriumod?
+                </h2>
+              </Reveal>
+              <Reveal show={visible} delay={460} from="left">
+                <p className="type-body mt-3 max-w-2xl">
+                  Rövid, egyértelmű szabályok: locsolás, fény, szellőztetés — kezdőknek is.
+                </p>
+              </Reveal>
+            </div>
 
-          <div className="shrink-0 sm:pl-4">
-            <Link to="/gondozas" className="block w-full sm:w-auto">
-              <PrimaryCtaButton className="w-full px-6 py-3 text-sm font-semibold sm:min-h-[52px] sm:px-8 sm:text-base">
-                Gondozási útmutató
-              </PrimaryCtaButton>
-            </Link>
-          </div>
-        </GlassCard>
+            <Reveal show={visible} delay={620} from="right" className="shrink-0 sm:pl-4">
+              <Link to="/gondozas" className="block w-full sm:w-auto">
+                <PrimaryCtaButton className="mt-6 w-full px-6 py-3 sm:min-h-[52px] sm:px-8">
+                  Gondozási útmutató
+                </PrimaryCtaButton>
+              </Link>
+            </Reveal>
+          </GlassCard>
+        </Reveal>
       </div>
     </section>
   );

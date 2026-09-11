@@ -111,7 +111,7 @@ export default function Header({ reveal = true }) {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className="relative font-light tracking-[0.06em] text-[0.88rem] text-white/80 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:text-white hover:after:w-full xl:text-[0.95rem]"
+                    className="type-nav relative transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:text-white hover:after:w-full"
                     data-figma-id={link.id}
                   >
                     <span className="inline-block" style={fadeStyle}>
@@ -122,7 +122,7 @@ export default function Header({ reveal = true }) {
                   <a
                     key={link.slug}
                     href={`/#${link.slug}`}
-                    className="relative font-light tracking-[0.06em] text-[0.88rem] text-white/80 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:text-white hover:after:w-full xl:text-[0.95rem]"
+                    className="type-nav relative transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:text-white hover:after:w-full"
                     data-figma-id={link.id}
                   >
                     <span className="inline-block" style={fadeStyle}>
@@ -191,10 +191,10 @@ export default function Header({ reveal = true }) {
           >
             <div className="border-t border-white/10 bg-[linear-gradient(180deg,rgba(18,24,18,0.94)_0%,rgba(9,12,10,0.96)_100%)]">
               <div className="px-4 pt-4 pb-3">
-                <p className="text-[11px] tracking-[0.24em] uppercase text-white/40">
+                <p className="type-label text-white/40">
                   Menü
                 </p>
-                <p className="text-white text-base font-light tracking-[0.04em]">
+                <p className="type-title">
                   Glass & Moss
                 </p>
               </div>
@@ -206,9 +206,9 @@ export default function Header({ reveal = true }) {
                       key={link.path}
                       to={link.path}
                       onClick={() => setMobileOpen(false)}
-                      className="relative flex items-center justify-between gap-3 font-light tracking-[0.06em] text-[0.95rem] text-white/80 hover:text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
+                      className="type-nav relative flex items-center justify-between gap-3 transition-colors duration-300 hover:text-white after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
                     >
-                      <span className="text-[0.95rem] font-light tracking-[0.06em]">
+                      <span>
                         {link.name}
                       </span>
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#A3B86C]/10 text-[#A3B86C] transition-colors duration-300">
@@ -232,9 +232,9 @@ export default function Header({ reveal = true }) {
                       key={link.slug}
                       href={`/#${link.slug}`}
                       onClick={() => setMobileOpen(false)}
-                      className="relative flex items-center justify-between gap-3 font-light tracking-[0.06em] text-[0.95rem] text-white/80 hover:text-white transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
+                      className="type-nav relative flex items-center justify-between gap-3 transition-colors duration-300 hover:text-white after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#A3B86C] after:transition-all after:duration-300 hover:after:w-full"
                     >
-                      <span className="text-[0.95rem] font-light tracking-[0.06em]">
+                      <span>
                         {link.name}
                       </span>
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#A3B86C]/10 text-[#A3B86C] transition-colors duration-300">
@@ -259,11 +259,11 @@ export default function Header({ reveal = true }) {
 
               <div className="px-4 pb-4">
                 <div className="rounded-2xl border border-[#A3B86C]/20 bg-[#A3B86C]/8 px-5 py-4">
-                  <p className="text-sm text-white/55 mb-1">Kapcsolat</p>
-                  <p className="text-white font-light tracking-[0.03em]">
+                  <p className="type-label mb-1 text-white/55">Kapcsolat</p>
+                  <p className="type-title">
                     Egyedi terráriumok és floráriumok
                   </p>
-                  <p className="text-sm text-white/65 mt-1">
+                  <p className="type-small mt-1">
                     Természetes elegancia, kézzel készített kompozíciók.
                   </p>
                 </div>

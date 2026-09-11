@@ -171,20 +171,20 @@ export default function CarePage() {
         {/* HERO — minmax(0,fr) stops grid blowout on wide screens; wider xl cap so both columns fit */}
         <section className="relative px-3 pb-12 pt-24 sm:px-4 sm:pb-16 sm:pt-28 md:px-10 lg:px-[132px] lg:pb-20 lg:pt-36">
           <div className="mx-auto w-full min-w-0 max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
-            <div className="inline-flex max-w-full flex-wrap items-center rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-semibold uppercase leading-snug tracking-[0.12em] text-[#A3B86C] backdrop-blur-sm sm:px-4 sm:text-xs sm:tracking-[0.18em]">
+            <div className="type-label inline-flex max-w-full flex-wrap items-center rounded-full border border-white/10 bg-white/5 px-3 py-2 backdrop-blur-sm sm:px-4">
               Glass & Moss • Care Guide
             </div>
 
             <div className="mt-6 grid min-w-0 items-start gap-8 sm:mt-8 sm:gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(0,0.88fr)] lg:gap-10 xl:gap-12">
               <div className="min-h-0 min-w-0">
-                <h1 className="max-w-full break-words text-balance text-[clamp(1.65rem,4vw+0.5rem,4.875rem)] font-bold leading-[1.08] tracking-tight sm:leading-[1.02] lg:leading-[0.98]">
+                <h1 className="type-display max-w-full break-words text-balance">
                   Terráriumgondozás
                   <span className="mt-1 block text-[#A3B86C] sm:mt-2">
                     a lehető legegyszerűbben
                   </span>
                 </h1>
 
-                <p className="mt-5 max-w-3xl break-words text-[clamp(0.9rem,1.1vw+0.65rem,1.125rem)] leading-[1.85] text-white/72 sm:mt-6 sm:leading-[1.9]">
+                <p className="type-body mt-5 max-w-3xl break-words sm:mt-6">
                   Ez az útmutató úgy készült, hogy akkor is biztosan tudd, mit
                   kell csinálni, ha még soha nem volt terráriumod. Kevés szabály
                   van, de azokat érdemes pontosan betartani.
@@ -198,7 +198,7 @@ export default function CarePage() {
               </div>
 
               <div className="min-h-0 min-w-0 rounded-2xl border border-[#A3B86C]/15 bg-gradient-to-br from-[#121a0f] via-[#0f160d] to-[#0b1109] p-4 shadow-[0_25px_90px_-40px_rgba(143,174,60,0.35)] sm:rounded-[2rem] sm:p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#A3B86C]">
+                <p className="type-label">
                   Ha csak 3 dolgot jegyzel meg
                 </p>
 
@@ -209,15 +209,15 @@ export default function CarePage() {
                       className="rounded-xl border border-white/8 bg-white/[0.04] p-3 sm:rounded-2xl sm:p-4"
                     >
                       <div className="flex min-w-0 items-start gap-3 sm:gap-4">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#8FAE3C]/15 text-sm font-bold text-[#A3B86C]">
+                        <div className="type-title flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#8FAE3C]/15 text-[#A3B86C]">
                           {item.number}
                         </div>
 
                         <div className="min-w-0">
-                          <h3 className="break-words text-base font-semibold text-white sm:text-lg">
+                          <h3 className="type-title break-words">
                             {item.title}
                           </h3>
-                          <p className="mt-1 break-words leading-[1.7] text-white/70">
+                          <p className="type-body mt-1 break-words">
                             {item.text}
                           </p>
                         </div>
@@ -332,15 +332,15 @@ export default function CarePage() {
         <section className="relative px-3 pb-16 sm:px-4 sm:pb-20 md:px-10 lg:px-[132px]">
           <div className="mx-auto grid w-full min-w-0 max-w-6xl gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8">
             <div className="min-w-0 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-sm sm:rounded-[2rem] sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#A3B86C]">
+              <p className="type-label">
                 Oktató rész
               </p>
 
-              <h2 className="mt-3 break-words text-[clamp(1.25rem,4.5vw,32px)] font-semibold tracking-tight">
+              <h2 className="type-heading mt-3 break-words">
                 Hogyan gondolkodj róla?
               </h2>
 
-              <div className="mt-6 space-y-4 break-words leading-[1.85] text-white/74">
+              <div className="type-body mt-6 space-y-4 break-words">
                 <p>
                   A terrárium nem olyan, mint egy hagyományos szobanövény. Nem
                   kell minden nap foglalkozni vele, és nem az a cél, hogy
@@ -365,11 +365,11 @@ export default function CarePage() {
             </div>
 
             <div className="min-w-0 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-sm sm:rounded-[2rem] sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#A3B86C]">
+              <p className="type-label">
                 Gyakori kérdések
               </p>
 
-              <h2 className="mt-3 break-words text-[clamp(1.25rem,4.5vw,32px)] font-semibold tracking-tight">
+              <h2 className="type-heading mt-3 break-words">
                 Amit a legtöbben megkérdeznek
               </h2>
 
@@ -384,11 +384,11 @@ export default function CarePage() {
                       onClick={() => setActive(active === `faq-${index}` ? null : `faq-${index}`)}
                       className="flex w-full min-w-0 items-start justify-between gap-3 p-4 text-left sm:items-center sm:gap-4 sm:p-5"
                     >
-                      <span className="min-w-0 flex-1 break-words text-sm font-medium leading-snug text-white/92 sm:text-base">
+                      <span className="type-title min-w-0 flex-1 break-words">
                         {item.q}
                       </span>
 
-                      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#8FAE3C]/15 text-lg font-semibold text-[#A3B86C] sm:mt-0">
+                      <span className="type-title mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#8FAE3C]/15 text-[#A3B86C] sm:mt-0">
                         {active === `faq-${index}` ? "−" : "+"}
                       </span>
                     </button>
@@ -401,7 +401,7 @@ export default function CarePage() {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <div className="break-words px-4 pb-4 pt-3 text-sm leading-[1.8] text-white/72 sm:px-5 sm:pb-5 sm:pt-4 sm:text-base">
+                        <div className="type-body break-words px-4 pb-4 pt-3 sm:px-5 sm:pb-5 sm:pt-4">
                           {item.a}
                         </div>
                       </div>
@@ -417,15 +417,15 @@ export default function CarePage() {
         <section className="relative px-3 pb-20 sm:px-4 sm:pb-28 md:px-10 lg:px-[132px]">
           <div className="mx-auto w-full min-w-0 max-w-6xl">
           <div className="overflow-hidden rounded-2xl border border-[#A3B86C]/20 bg-gradient-to-br from-[#11170f] via-[#151d12] to-[#0d120c] p-5 text-center shadow-[0_25px_90px_-45px_rgba(143,174,60,0.35)] sm:rounded-[2rem] sm:p-8 md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#A3B86C]">
+            <p className="type-label">
               Segítségre van szükséged?
             </p>
 
-            <h2 className="mt-3 break-words text-[clamp(1.35rem,5vw,40px)] font-semibold tracking-tight sm:mt-4">
+            <h2 className="type-heading mt-3 break-words sm:mt-4">
               Nem vagy biztos benne, hogy minden rendben van?
             </h2>
 
-            <p className="mx-auto mt-3 max-w-2xl break-words leading-[1.75] text-white/70 sm:mt-4 sm:leading-[1.8]">
+            <p className="type-body mx-auto mt-3 max-w-2xl break-words sm:mt-4">
               Írj nekünk, és segítünk eldönteni, hogy a terráriumodnak mire van
               szüksége. Sokszor egy fotó alapján is meg tudjuk mondani, mi a
               teendő.
@@ -433,7 +433,7 @@ export default function CarePage() {
 
             <Link
               to="/#elerhetoseg"
-              className="mt-6 inline-flex w-full max-w-sm items-center justify-center rounded-2xl bg-[#8FAE3C] px-6 py-3.5 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-[#9bbb47] sm:mt-8 sm:w-auto sm:px-7"
+              className="type-button mt-6 inline-flex w-full max-w-sm items-center justify-center rounded-2xl bg-[#8FAE3C] px-6 py-3.5 text-black transition hover:-translate-y-0.5 hover:bg-[#9bbb47] sm:mt-8 sm:w-auto sm:px-7"
             >
               Kapcsolat
             </Link>
@@ -448,13 +448,13 @@ export default function CarePage() {
 function SectionHeading({ overline, title, text }) {
   return (
     <div className="max-w-3xl min-w-0">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#A3B86C]">
+      <p className="type-label">
         {overline}
       </p>
-      <h2 className="mt-3 break-words text-[clamp(1.35rem,5vw,42px)] font-semibold tracking-tight text-white">
+      <h2 className="type-heading mt-3 break-words">
         {title}
       </h2>
-      <p className="mt-4 break-words leading-[1.85] text-white/70">{text}</p>
+      <p className="type-body mt-4 break-words">{text}</p>
     </div>
   );
 }
@@ -462,10 +462,10 @@ function SectionHeading({ overline, title, text }) {
 function MiniStat({ title, value }) {
   return (
     <div className="min-w-0 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-sm sm:p-5">
-      <p className="text-[10px] font-semibold uppercase leading-snug tracking-[0.12em] text-white/45 sm:text-xs sm:tracking-[0.14em]">
+      <p className="type-label text-white/45">
         {title}
       </p>
-      <p className="mt-1.5 break-words text-xl font-bold text-white sm:mt-2 sm:text-2xl">
+      <p className="type-heading mt-1.5 break-words sm:mt-2">
         {value}
       </p>
     </div>
@@ -480,14 +480,14 @@ function InfoCard({ icon, title, points }) {
           {icon}
         </div>
 
-        <h3 className="min-w-0 flex-1 break-words text-[clamp(1.1rem,4vw,28px)] font-semibold tracking-tight">
+        <h3 className="type-heading min-w-0 flex-1 break-words">
           {title}
         </h3>
       </div>
 
       <ul className="space-y-2.5 sm:space-y-3">
         {points.map((point, index) => (
-          <li key={index} className="flex min-w-0 gap-3 leading-[1.75] text-white/78 sm:leading-[1.8]">
+          <li key={index} className="type-body flex min-w-0 gap-3">
             <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#A3B86C]" />
             <span className="min-w-0 break-words">{point}</span>
           </li>
@@ -500,13 +500,13 @@ function InfoCard({ icon, title, points }) {
 function RoutineCard({ step, title, text }) {
   return (
     <div className="min-w-0 rounded-2xl border border-white/10 bg-black/20 p-4 sm:rounded-[2rem] sm:p-6">
-      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#8FAE3C]/15 text-sm font-bold text-[#A3B86C] sm:h-11 sm:w-11 sm:rounded-2xl">
+      <div className="type-title flex h-10 w-10 items-center justify-center rounded-xl bg-[#8FAE3C]/15 text-[#A3B86C] sm:h-11 sm:w-11 sm:rounded-2xl">
         {step}
       </div>
-      <h3 className="mt-3 break-words text-lg font-semibold text-white sm:mt-4 sm:text-xl">
+      <h3 className="type-heading mt-3 break-words sm:mt-4">
         {title}
       </h3>
-      <p className="mt-2 break-words leading-[1.75] text-white/72">{text}</p>
+      <p className="type-body mt-2 break-words">{text}</p>
     </div>
   );
 }
@@ -518,14 +518,14 @@ function SeasonCard({ title, icon, items }) {
         <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#8FAE3C]/12 text-xl sm:h-12 sm:w-12 sm:rounded-2xl sm:text-2xl">
           {icon}
         </div>
-        <h3 className="min-w-0 flex-1 break-words text-[clamp(1.1rem,4vw,28px)] font-semibold tracking-tight text-white">
+        <h3 className="type-heading min-w-0 flex-1 break-words">
           {title}
         </h3>
       </div>
 
       <ul className="space-y-2.5 sm:space-y-3">
         {items.map((item, index) => (
-          <li key={index} className="flex min-w-0 gap-3 leading-[1.75] text-white/78 sm:leading-[1.8]">
+          <li key={index} className="type-body flex min-w-0 gap-3">
             <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#A3B86C]" />
             <span className="min-w-0 break-words">{item}</span>
           </li>
@@ -538,28 +538,28 @@ function SeasonCard({ title, icon, items }) {
 function ObservationCard({ title, status, meaning, solution }) {
   return (
     <div className="min-w-0 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-sm sm:rounded-[2rem] sm:p-6">
-      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#A3B86C] sm:text-sm">
+      <p className="type-label">
         Mit látsz?
       </p>
 
-      <h3 className="mt-2 break-words text-lg font-semibold text-white sm:text-xl">
+      <h3 className="type-heading mt-2 break-words">
         {title}
       </h3>
 
       <div className="mt-4 space-y-3 sm:mt-5 sm:space-y-4">
         <div className="rounded-xl border border-white/8 bg-black/20 p-3 sm:rounded-2xl sm:p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/45">
+          <p className="type-label text-white/45">
             Mire utalhat?
           </p>
-          <p className="mt-2 break-words font-medium text-white/92">{status}</p>
-          <p className="mt-2 break-words leading-[1.75] text-white/70">{meaning}</p>
+          <p className="type-title mt-2 break-words">{status}</p>
+          <p className="type-body mt-2 break-words">{meaning}</p>
         </div>
 
         <div className="rounded-xl border border-[#8FAE3C]/15 bg-[#8FAE3C]/8 p-3 sm:rounded-2xl sm:p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#A3B86C]">
+          <p className="type-label">
             Mi a megoldás?
           </p>
-          <p className="mt-2 break-words leading-[1.75] text-white/82">{solution}</p>
+          <p className="type-body mt-2 break-words">{solution}</p>
         </div>
       </div>
     </div>

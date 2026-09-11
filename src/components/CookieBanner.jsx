@@ -40,7 +40,7 @@ export default function CookieBanner() {
       <div className="max-w-[1200px] mx-auto bg-[#1a1f18] border border-white/10 rounded-2xl shadow-2xl p-6 md:p-8 backdrop-blur-xl">
         <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
           <div className="flex-1">
-            <p className="text-white/90 text-[clamp(0.95rem,1.1vw,16px)] leading-relaxed">
+            <p className="type-body">
               A weboldal cookie-kat (sütiket) használ a megfelelő működés és a felhasználói élmény javítása érdekében.
               További információ:{" "}
               <Link
@@ -55,14 +55,14 @@ export default function CookieBanner() {
             <button
               type="button"
               onClick={handleAccept}
-              className="px-5 py-2.5 rounded-full bg-[#4f6f2f] text-white font-medium hover:bg-[#5d7c34] transition-colors"
+              className="type-button px-5 py-2.5 rounded-full bg-[#4f6f2f] text-white hover:bg-[#5d7c34] transition-colors"
             >
               Elfogadom
             </button>
             <button
               type="button"
               onClick={handleDecline}
-              className="px-5 py-2.5 rounded-full border border-white/20 text-white/80 font-medium hover:bg-white/5 hover:text-white transition-colors"
+              className="type-button px-5 py-2.5 rounded-full border border-white/20 text-white/80 hover:bg-white/5 hover:text-white transition-colors"
             >
               Elutasítom
             </button>

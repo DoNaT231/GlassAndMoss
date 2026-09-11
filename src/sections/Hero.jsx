@@ -186,30 +186,11 @@ export default function Hero({ onIntroComplete }) {
               "
             />
 
-            <p
-              className="
-                font-sans font-normal
-                max-w-[640px]
-                text-[0.88rem] leading-snug
-                sm:text-[1.15rem]
-                md:text-[1.28rem]
-                tracking-[0.02em] text-white/82
-              "
-            >
+            <p className="type-lede max-w-[640px]">
               Természet üvegbe foglalva.
             </p>
 
-            <p
-              className="
-                mt-1.5 max-w-[420px]
-                font-sans font-light
-                text-[0.68rem] leading-[1.65]
-                sm:mt-2 sm:max-w-[480px]
-                sm:text-[0.84rem] sm:leading-[1.75]
-                md:text-[0.88rem]
-                tracking-[0.05em] text-white/52
-              "
-            >
+            <p className="type-small mt-1.5 max-w-[420px] sm:mt-2 sm:max-w-[480px]">
               Egyedi terráriumok, floráriumok és bútorokba épített ökoszisztémák,
               kézzel készítve, letisztult megjelenéssel.
             </p>
