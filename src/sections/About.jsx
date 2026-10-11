@@ -10,8 +10,8 @@ export default function About() {
       ref={sectionRef}
       className="
         w-full relative z-10 
-        py-20 lg:py-28 
-        px-4 md:px-10 lg:px-[132px] 
+        py-12 lg:py-16 
+        px-4 md:px-8 lg:px-12 
         scroll-mt-[78px]
         bg-gradient-to-b from-[#0b0f0a] via-[#10150f] to-[#0b0f0a]
         overflow-hidden
@@ -25,10 +25,10 @@ export default function About() {
         opacity-40
       " />
       <div className="max-w-[1666px] mx-auto">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 text-white">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-10 text-white">
           <div className="order-2 md:order-1">
             <Reveal show={visible} delay={420} from="left">
-              <h2 className="type-display mb-8 text-left lg:mb-12">
+              <h2 className="type-display mb-4 text-left lg:mb-6">
                 Rólunk
               </h2>
             </Reveal>

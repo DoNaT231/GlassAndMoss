@@ -5,7 +5,7 @@ export default function ASZF() {
   return (
     <div className="min-h-screen bg-[#0b0f0a] text-white">
       <Header />
-      <div className="max-w-[800px] mx-auto px-4 md:px-10 pt-24 pb-16 md:pt-32 md:pb-24">
+      <div className="max-w-[800px] mx-auto px-4 md:px-8 pt-20 pb-12 md:pt-24 md:pb-16">
         <Link
           to="/"
           className="type-small mb-10 inline-flex items-center gap-2 text-[#A3B86C] hover:text-white transition-colors"
@@ -16,7 +16,7 @@ export default function ASZF() {
         <h1 className="type-display mb-2">
           Általános Szerződési Feltételek (ÁSZF)
         </h1>
-        <p className="type-small mb-12">
+        <p className="type-small mb-6">
           Utolsó frissítés: {new Date().toLocaleDateString("hu-HU")}
         </p>
 

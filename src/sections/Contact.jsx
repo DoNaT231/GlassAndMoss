@@ -21,7 +21,7 @@ export default function Contact() {
         relative z-10 w-full overflow-hidden
         scroll-mt-[78px]
         bg-gradient-to-b from-[#0b0f0a] via-[#10150f] to-[#0b0f0a]
-        px-4 py-20 pb-32 md:px-10 lg:px-[132px] lg:py-28
+        px-4 py-12 pb-16 md:px-8 lg:px-12 lg:py-16
       "
     >
       <div className="pointer-events-none absolute inset-0">
@@ -30,9 +30,9 @@ export default function Contact() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1920px]">
-        <div className="mx-auto mb-10 max-w-[1666px] lg:mb-12">
+        <div className="mx-auto mb-6 max-w-[1666px] lg:mb-8">
           <Reveal show={visible} delay={0} from="left">
-            <h2 className="type-display mb-8 text-left lg:mb-12">
+            <h2 className="type-display mb-4 text-left lg:mb-6">
               Elérhetőség
             </h2>
           </Reveal>
@@ -45,9 +45,9 @@ export default function Contact() {
           </Reveal>
         </div>
 
-        <div className="mx-auto grid max-w-[1666px] grid-cols-1 items-stretch gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mx-auto grid max-w-[1666px] grid-cols-1 items-stretch gap-5 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal show={visible} delay={320} from="left" className="h-full">
-            <GlassCard className="flex min-h-[320px] h-full flex-col justify-between p-8 md:p-10 lg:p-12">
+            <GlassCard className="flex min-h-[240px] h-full flex-col justify-between p-6 md:p-7 lg:p-8">
               <div>
                 <span className="type-label mb-4 inline-block">
                   Glass & Moss

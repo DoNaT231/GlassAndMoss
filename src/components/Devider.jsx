@@ -1,6 +1,6 @@
 export default function Divider() {
   return (
-    <div className="relative h-64 md:h-100">
+    <div className="relative h-28 md:h-40">
       <div
         className="h-full w-full bg-cover bg-center"
         style={{ backgroundImage: "url('/mossresizedrockwalkjpg.jpg.webp')" }}

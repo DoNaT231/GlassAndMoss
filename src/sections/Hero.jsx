@@ -9,16 +9,23 @@ const CONTENT_DELAY_MS = 380;
 const CONTENT_FADE_MS = 700;
 const SHADOW_MS = 700;
 const SHRINK_EASE = "cubic-bezier(0.16, 1, 0.3, 1)";
-const FINAL_MAX_WIDTH = 1120;
+function heroCardMaxWidth() {
+  const width = window.innerWidth;
+  if (width >= 1680) return 1120;
+  if (width >= 1280) return 820;
+  return 680;
+}
 const FINAL_RADIUS = 32;
 const GLASS_SHADOW = "0 20px 60px rgba(0,0,0,0.35)";
 
 const cardPaddingClassName = `
   h-full w-full
-  px-5 py-10
-  sm:px-10 sm:py-10
-  md:px-14 md:py-12
-  lg:px-16 lg:py-12
+  px-5 py-6
+  sm:px-8 sm:py-7
+  md:px-10 md:py-8
+  lg:px-10 lg:py-7
+  xl:px-12 xl:py-8
+  min-[1680px]:px-16 min-[1680px]:py-12
 `;
 
 export default function Hero({ onIntroComplete }) {
@@ -138,10 +145,11 @@ export default function Hero({ onIntroComplete }) {
       ref={sectionRef}
       className="
         relative z-10 flex h-dvh max-h-dvh w-full items-center justify-center overflow-hidden
-        px-4 pt-24 pb-10
-        sm:px-6 sm:pt-28 sm:pb-12
-        md:px-8 md:pt-32
-        lg:px-10 lg:pt-36 lg:pb-16
+        px-4 pt-20 pb-8
+        sm:px-6 sm:pt-24 sm:pb-10
+        md:px-8 md:pt-28
+        lg:px-8 lg:pt-24 lg:pb-10
+        min-[1680px]:px-10 min-[1680px]:pt-24 min-[1680px]:pb-10
         bg-[url('/desktop-wallpapers-mossy-forest-wallpaper-for_9599288.jpg!w700wp')]
         bg-cover bg-center
       "
@@ -182,10 +190,12 @@ export default function Hero({ onIntroComplete }) {
               alt="Glass & Moss"
               className="
                 -mb-1 h-auto w-full
-                max-w-[200px]
-                sm:-mb-3 sm:max-w-[320px]
-                md:-mb-4 md:max-w-[420px]
-                lg:max-w-[520px]
+                max-w-[168px]
+                sm:-mb-2 sm:max-w-[220px]
+                md:max-w-[260px]
+                lg:max-w-[300px]
+                xl:max-w-[360px]
+                min-[1680px]:max-w-[480px]
                 mix-blend-screen
               "
             />
@@ -199,7 +209,7 @@ export default function Hero({ onIntroComplete }) {
               kézzel készítve, letisztult megjelenéssel.
             </p>
 
-            <div className="mt-4 sm:mt-8">
+            <div className="mt-3 sm:mt-5 min-[1680px]:mt-8">
               <Link to="/#katalogus">
                 <PrimaryCtaButton>Katalógus megtekintése</PrimaryCtaButton>
               </Link>
@@ -288,7 +298,7 @@ function measureHeroCardTarget(section, card) {
   const padB = parseFloat(styles.paddingBottom);
   const contentW = section.clientWidth - padL - padR;
   const contentH = section.clientHeight - padT - padB;
-  const width = Math.min(FINAL_MAX_WIDTH, contentW);
+  const width = Math.min(heroCardMaxWidth(), contentW);
 
   const clone = card.cloneNode(true);
   clone.setAttribute("aria-hidden", "true");

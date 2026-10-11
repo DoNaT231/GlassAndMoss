@@ -52,7 +52,7 @@ export default function Header({ reveal = true }) {
   const navLinks = [
     { name: "Rólunk", slug: "rolunk", id: "13:6" },
     { name: "Miért mi?", slug: "miert-mi", id: "13:7" },
-    { name: "Gondozás", path: "/gondozas", id: "care" },
+    { name: "Gondozási útmutató", path: "/terrarium-gondozas", id: "care" },
     { name: "Katalógus", slug: "katalogus", id: "13:8" },
     { name: "Elérhetőség", slug: "elerhetoseg", id: "13:9" },
   ];
@@ -83,10 +83,10 @@ export default function Header({ reveal = true }) {
       data-figma-id="13:3"
     >
       <div className="max-w-[1920px] mx-auto">
-        <div className="mt-4 border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.18)] overflow-hidden">
+        <div className="mt-1 border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.18)] overflow-hidden">
           
           {/* TOP BAR */}
-          <div className="flex items-center justify-between min-h-[60px] px-4 md:px-6 lg:px-8">
+          <div className="flex items-center justify-between px-3 py-1 md:px-4 lg:px-5">
             <a
               href="/"
               className="flex shrink-0 items-center transition-transform duration-300 hover:scale-[1.02]"
@@ -95,14 +95,14 @@ export default function Header({ reveal = true }) {
               <img
                 src={headerIcon}
                 alt="Glass & Moss"
-                className="h-10 w-10 object-contain mix-blend-screen md:h-12 md:w-12 lg:h-14 lg:w-14"
+                className="h-7 w-7 object-contain mix-blend-screen"
                 style={fadeStyle}
                 data-figma-id="12:28"
               />
             </a>
 
             <nav
-              className="hidden items-center gap-10 lg:flex xl:gap-14"
+              className="hidden items-center gap-5 lg:flex xl:gap-7"
               data-figma-id="13:5"
             >
               {navLinks.map((link) =>
@@ -139,7 +139,7 @@ export default function Header({ reveal = true }) {
                 aria-expanded={mobileOpen}
                 aria-label="Menü megnyitása"
                 onClick={() => setMobileOpen((o) => !o)}
-                className="flex items-center justify-center w-10 h-10 rounded-2xl bg-white/5 border border-white/10 text-primary hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300 active:scale-95 relative"
+                className="flex items-center justify-center w-8 h-8 rounded-xl bg-white/5 border border-white/10 text-primary hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300 active:scale-95 relative"
               >
                 <svg
                   width="24"
