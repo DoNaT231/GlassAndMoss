@@ -16,8 +16,8 @@ export default function WhyUs() {
       ref={sectionRef}
       className="
         w-full relative z-10 
-        py-20 lg:py-28 
-        px-4 md:px-10 lg:px-[132px] 
+        py-12 lg:py-16 
+        px-4 md:px-8 lg:px-12 
         scroll-mt-[78px]
         bg-[url('/pngtree-nice-green-forest-landscape-city-hd-background-wallpaper-desktop-image_16327548.jpg')]
         bg-cover bg-center
@@ -37,7 +37,7 @@ export default function WhyUs() {
 
       <div className="max-w-[1666px] mx-auto relative z-10">
         <Reveal show={visible} delay={0} from="left">
-          <h2 className="type-display mb-8 text-left lg:mb-12">
+          <h2 className="type-display mb-4 text-left lg:mb-6">
             Miért minket válassz?
           </h2>
         </Reveal>

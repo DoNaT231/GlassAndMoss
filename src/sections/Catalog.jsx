@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import useSectionReveal from "../hooks/useSectionReveal";
 
@@ -48,21 +49,29 @@ export default function Catalog() {
         relative z-10 w-full overflow-hidden
         scroll-mt-[78px]
         bg-gradient-to-b from-[#0b0f0a] via-[#10150f] to-[#0b0f0a]
-        px-4 py-20 md:px-10 lg:px-[132px] lg:py-28
+        px-4 py-12 md:px-8 lg:px-12 lg:py-16
       "
     >
       <div className="mx-auto max-w-[1920px]">
         <Reveal show={visible} delay={0} from="left">
-          <h2 className="type-display mb-8 text-left lg:mb-12">
+          <h2 className="type-display mb-4 text-left lg:mb-6">
             Katalógus
           </h2>
         </Reveal>
 
         <div className="mx-auto max-w-[1666px]">
           <Reveal show={visible} delay={140} from="left">
-            <p className="type-body mb-12 max-w-2xl text-left">
+            <p className="type-body mb-3 max-w-2xl text-left">
               Válogatás a kész és megrendelhető munkáinkból, természetes formákra
               és egyedi kompozíciókra építve.
+            </p>
+            <p className="mb-6">
+              <Link
+                to="/terrarium-gondozas"
+                className="type-small text-[#A3B86C] underline-offset-4 transition-colors hover:text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A3B86C]"
+              >
+                Gondozási útmutató
+              </Link>
             </p>
           </Reveal>
 

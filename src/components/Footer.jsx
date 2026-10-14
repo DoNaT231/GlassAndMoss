@@ -41,7 +41,7 @@ export default function Footer() {
   return (
     <footer
       ref={sectionRef}
-      className="w-full relative z-10 py-12 md:py-16 px-4 md:px-10 lg:px-[132px] scroll-mt-[78px] border-t border-white/10 bg-[#0b0f0a]"
+      className="w-full relative z-10 py-8 md:py-10 px-4 md:px-8 lg:px-12 scroll-mt-[78px] border-t border-white/10 bg-[#0b0f0a]"
     >
       <div className="max-w-[1920px] mx-auto">
         <div className="max-w-[1666px] mx-auto">
@@ -62,13 +62,13 @@ export default function Footer() {
           </div>
 
           <Reveal show={visible} delay={420} from="up">
-            <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div className="flex flex-wrap gap-x-6 gap-y-1">
                 <Link
-                  to="/gondozas"
+                  to="/terrarium-gondozas"
                   className="type-small hover:text-[#A3B86C] transition-colors"
                 >
-                  Gondozás
+                  Gondozási útmutató
                 </Link>
                 <Link
                   to="/adatkezelesi-tajekoztato"

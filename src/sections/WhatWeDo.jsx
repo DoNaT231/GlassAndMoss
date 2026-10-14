@@ -15,21 +15,21 @@ export default function WhatWeDo() {
     <section
       id="mit-csinalunk"
       ref={sectionRef}
-      className="w-full relative z-10 py-20 lg:py-28 px-4 md:px-10 lg:px-[132px] scroll-mt-[78px] bg-gradient-to-b from-[#0b0f0a] via-[#10150f] to-[#0b0f0a]"
+      className="w-full relative z-10 py-12 lg:py-16 px-4 md:px-8 lg:px-12 scroll-mt-[78px] bg-gradient-to-b from-[#0b0f0a] via-[#10150f] to-[#0b0f0a]"
       data-figma-id="40:2"
     >
       <div className="max-w-[1920px] mx-auto">
         <Reveal show={visible} delay={0} from="left">
           <h2
-            className="type-display mb-8 text-left lg:mb-12"
+            className="type-display mb-4 text-left lg:mb-6"
             data-figma-id="40:40"
           >
             Mit készítünk?
           </h2>
         </Reveal>
 
-        <div className="flex flex-col gap-8 lg:gap-y-[39px] w-full max-w-[1666px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-y-[39px] lg:gap-x-[54px] w-full">
+        <div className="flex flex-col gap-5 w-full max-w-[1666px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 w-full">
             {cards.map((card, index) => (
               <Reveal
                 key={card.id}

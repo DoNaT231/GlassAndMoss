@@ -13,6 +13,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/terrarium-gondozas" element={<CarePage />} />
         <Route path="/gondozas" element={<CarePage />} />
         <Route path="/adatkezelesi-tajekoztato" element={<AdatkezelesiTajekoztato />} />
         <Route path="/aszf" element={<ASZF />} />
